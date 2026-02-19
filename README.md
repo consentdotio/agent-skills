@@ -1,4 +1,4 @@
-# Consent.io Skills
+# Agent Skills
 
 A collection of skills for AI coding agents following the Agent Skills format.
 
@@ -11,7 +11,7 @@ Comprehensive TSDoc and JSDoc authoring skill for TypeScript and JavaScript code
 ## Installation
 
 ```bash
-npx skills add consentdotio/skills
+npx skills add https://github.com/consentdotio/agent-skills --skill tsdoc-jsdoc-authoring
 ```
 
 ## Usage
