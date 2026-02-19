@@ -16,6 +16,16 @@ February 2026
 
 Comprehensive TSDoc and JSDoc authoring guide for automated documentation generation and review. Contains focused rules across core contract tags, linking/reuse tags, package/internal docs, policy tags, and JavaScript-focused docstring patterns. Each rule explains when to use the tag, when not to use it, and includes concrete incorrect/correct examples.
 
+## Read Order (Context-Safe)
+
+Before using this catalog, route through one focused index:
+
+- `indexes/tsdoc-index.md`
+- `indexes/jsdoc-authoring-index.md`
+- `indexes/jsdoc-consistency-index.md`
+
+This file is a reference catalog. Load only the relevant subsection after choosing an index.
+
 ---
 
 ## Rule Index
@@ -29,26 +39,26 @@ Comprehensive TSDoc and JSDoc authoring guide for automated documentation genera
 1.5 [Document Return Semantics with `@returns`](#15-document-return-semantics-with-returns)  
 1.6 [Document Expected Failures with `@throws`](#16-document-expected-failures-with-throws)  
 1.7 [Use `@example` for Non-Obvious Usage](#17-use-example-for-non-obvious-usage)  
-1.8 [Use `@deprecated` with Migration Guidance](#18-use-deprecated-with-migration-guidance)  
+1.8 [Use `@deprecated` with Migration Guidance](#18-use-deprecated-with-migration-guidance)
 
 ### 2. Cross-Reference and Reuse Rules
 
 2.1 [Prefer `{@link ...}` for Symbol References](#21-prefer-link--for-symbol-references)  
 2.2 [Use `@see` for Related APIs](#22-use-see-for-related-apis)  
 2.3 [Use `@inheritDoc` Only for Equivalent Contracts](#23-use-inheritdoc-only-for-equivalent-contracts)  
-2.4 [Use `{@label ...}` Only for Structured References](#24-use-label--only-for-structured-references)  
+2.4 [Use `{@label ...}` Only for Structured References](#24-use-label--only-for-structured-references)
 
 ### 3. Package and Internal Notes
 
 3.1 [Use `@packageDocumentation` for Entrypoint Docs](#31-use-packagedocumentation-for-entrypoint-docs)  
 3.2 [Use `@privateRemarks` for Maintainer-Only Notes](#32-use-privateremarks-for-maintainer-only-notes)  
-3.3 [Document Defaults with `@defaultValue`](#33-document-defaults-with-defaultvalue)  
+3.3 [Document Defaults with `@defaultValue`](#33-document-defaults-with-defaultvalue)
 
 ### 4. Stability and Modifier Policy
 
 4.1 [Apply Release Tags Consistently](#41-apply-release-tags-consistently)  
 4.2 [Use Modifier Tags Only When Semantically True](#42-use-modifier-tags-only-when-semantically-true)  
-4.3 [Do Not Mix JSDoc Type Syntax into TSDoc](#43-do-not-mix-jsdoc-type-syntax-into-tsdoc)  
+4.3 [Do Not Mix JSDoc Type Syntax into TSDoc](#43-do-not-mix-jsdoc-type-syntax-into-tsdoc)
 
 ### 5. JSDoc Rules (JavaScript)
 
@@ -64,6 +74,8 @@ Comprehensive TSDoc and JSDoc authoring guide for automated documentation genera
 5.10 [Document Generator Output with `@yields`](#510-document-generator-output-with-yields)  
 5.11 [Document Constructors and Classes Clearly](#511-document-constructors-and-classes-clearly)  
 5.12 [Use `@module` for Module-Level Docs](#512-use-module-for-module-level-docs)  
+5.13 [Validate Access Tags with `check-access`](#513-validate-access-tags-with-check-access)  
+5.14 [Restrict `@implements` to Classes or Constructors](#514-restrict-implements-to-classes-or-constructors)
 
 ---
 
@@ -149,6 +161,8 @@ See: `rules/tsdoc/policy/tsdoc-no-jsdoc-braces.md`
 
 ## 5. JSDoc Rules (JavaScript)
 
+These rules are part of the default documentation standard and should be followed even without an active linter.
+
 ### 5.1 Write JSDoc Summaries with Intent
 
 See: `rules/jsdoc/core/jsdoc-summary.md`
@@ -196,6 +210,14 @@ See: `rules/jsdoc/advanced/jsdoc-class-constructor.md`
 ### 5.12 Use `@module` for Module-Level Docs
 
 See: `rules/jsdoc/advanced/jsdoc-module.md`
+
+### 5.13 Validate Access Tags with `check-access`
+
+See: `rules/jsdoc/core/jsdoc-check-access.md`
+
+### 5.14 Restrict `@implements` to Classes or Constructors
+
+See: `rules/jsdoc/advanced/jsdoc-implements-on-classes.md`
 
 ---
 

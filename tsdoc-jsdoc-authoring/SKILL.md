@@ -14,10 +14,19 @@ Create high-quality documentation comments for functions, classes, interfaces, t
 ## When to Apply
 
 Use this skill when the user asks to:
+
 - add or improve code comments/docs
 - write TSDoc or JSDoc
 - document params, return values, thrown errors, or examples
 - standardize documentation style across files
+
+## Routing (Read This First)
+
+Choose one focused index before loading rule files:
+
+- TypeScript APIs and typed exports: `indexes/tsdoc-index.md`
+- JavaScript authoring and shape docs: `indexes/jsdoc-authoring-index.md`
+- Strict consistency/lint-safe output standards: `indexes/jsdoc-consistency-index.md`
 
 ## Rule 1: Choose the Correct Standard
 
@@ -48,6 +57,7 @@ Use this skill when the user asks to:
 ## TSDoc Rules
 
 Use these tags by default when relevant:
+
 - `@param` for each function argument
 - `@typeParam` for generic parameters
 - `@returns` for return semantics
@@ -57,6 +67,7 @@ Use these tags by default when relevant:
 - `@deprecated` for migration guidance
 
 TSDoc formatting reminders:
+
 - Use `@param name - Description` with a hyphen separator.
 - Prefer inline links with `{@link SymbolName}`.
 - Keep release tags (`@alpha`, `@beta`, `@public`, `@internal`) aligned with project policy.
@@ -65,6 +76,7 @@ TSDoc formatting reminders:
 ## JSDoc Rules
 
 Use these tags by default when relevant:
+
 - `@param {Type} name` (with optional/default forms when needed)
 - `@returns {Type}` (or `@return`)
 - `@throws {Type}` when known
@@ -73,13 +85,23 @@ Use these tags by default when relevant:
 - `@async` and `@yields` for async/generator behavior when needed
 
 JSDoc formatting reminders:
+
 - Optional params: `@param {string} [name]`
 - Optional with default: `@param {string} [name=John Doe]`
 - Nested object props: `@param {Object} options` and `@param {string} options.mode`
 
+## JSDoc Consistency Standard
+
+Apply these rules by default in all JavaScript documentation, regardless of lint setup.
+
+- Keep `@access` usage consistent per block (`@access <level>` or one shorthand access tag).
+- Use `@implements` only on classes/constructors.
+- Prefer rule-specific guidance from the `rules/jsdoc/**` files when there is a conflict.
+
 ## Output Expectations
 
 When updating comments:
+
 - keep existing project conventions unless user requests a migration
 - preserve behavior accuracy over verbosity
 - avoid adding comments to private/internal symbols unless requested
@@ -90,14 +112,11 @@ For templates and tag cheat sheets, see [reference.md](reference.md).
 
 ## Rule Files
 
-Read focused rule files in `rules/` for concrete "incorrect vs correct" patterns:
+Use focused indexes to avoid loading unrelated rules:
 
-- Core contract: `tsdoc-summary`, `tsdoc-remarks`, `tsdoc-param`, `tsdoc-typeparam`, `tsdoc-returns`, `tsdoc-throws`, `tsdoc-example`, `tsdoc-deprecated`
-- Cross-reference/reuse: `tsdoc-link`, `tsdoc-see`, `tsdoc-inheritdoc`, `tsdoc-label`
-- Package/internal: `tsdoc-package-documentation`, `tsdoc-private-remarks`, `tsdoc-default-value`
-- Policy: `tsdoc-release-tags`, `tsdoc-modifier-tags`, `tsdoc-no-jsdoc-braces`
-- JSDoc core: `jsdoc-summary`, `jsdoc-param`, `jsdoc-optional-default`, `jsdoc-property-namepaths`, `jsdoc-returns`, `jsdoc-throws`, `jsdoc-example`
-- JSDoc advanced: `jsdoc-typedef-property`, `jsdoc-async`, `jsdoc-yields`, `jsdoc-class-constructor`, `jsdoc-module`
+- TSDoc index: `indexes/tsdoc-index.md`
+- JSDoc authoring index: `indexes/jsdoc-authoring-index.md`
+- JSDoc consistency index: `indexes/jsdoc-consistency-index.md`
 
 ## Full Compiled Document
 

@@ -21,7 +21,7 @@ Common modifier tags: `@readonly`, `@override`, `@virtual`, `@sealed`, `@decorat
  * Tracks current request count.
  * @readonly
  */
-export let requestCount = 0
+export let requestCount = 0;
 ```
 
 **Correct (tag matches behavior):**
@@ -31,5 +31,5 @@ export let requestCount = 0
  * Current build version.
  * @readonly
  */
-export const BUILD_VERSION = "1.0.0"
+export const BUILD_VERSION = "1.0.0";
 ```
