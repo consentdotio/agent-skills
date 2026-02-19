@@ -46,244 +46,15 @@ TSDoc tags are grouped into three syntax kinds:
 
 Use the right syntax kind for the right purpose. Do not write modifier tags as prose blocks.
 
-## 3) Complete Standard Tag Catalog
+## 3) Routing to Focused Rule Sets
 
-Below is the full standard tag set and how to use each tag.
+Use focused indexes instead of loading full rule catalogs into context:
 
-### 3.1 Block Tags
+- TSDoc work: `indexes/tsdoc-index.md`
+- JSDoc authoring work: `indexes/jsdoc-authoring-index.md`
+- JSDoc consistency and lint-safe output: `indexes/jsdoc-consistency-index.md`
 
-#### `@param`
-
-- Use when: documenting each function/method parameter.
-- Format: `@param name - Description`
-- Good for: meaning, allowed range, units, nullability semantics, side effects.
-- Avoid: repeating obvious type info already in signature.
-
-```ts
-/**
- * @param timeoutMs - Maximum wait time in milliseconds.
- */
-```
-
-#### `@typeParam`
-
-- Use when: function/class/interface/type alias has generic parameters.
-- Format: `@typeParam T - Description`
-- Good for: role of generic (input model, output shape, constraint intent).
-- Avoid: skipping generic docs on public APIs.
-
-```ts
-/**
- * @typeParam TItem - Item shape stored in the index.
- */
-```
-
-#### `@returns`
-
-- Use when: function returns a value (including Promise payload semantics).
-- Good for: return meaning, invariants, sorting/order guarantees.
-- Avoid: trivial restatement like "Returns a string" with no value semantics.
-
-```ts
-/**
- * @returns A stable, deduplicated list sorted by `createdAt` descending.
- */
-```
-
-#### `@remarks`
-
-- Use when: summary needs deeper context.
-- Good for: algorithm notes, concurrency behavior, performance caveats, compatibility.
-- Avoid: very short comments that belong in summary.
-
-```ts
-/**
- * @remarks
- * Uses optimistic concurrency and retries once on version conflicts.
- */
-```
-
-#### `@privateRemarks`
-
-- Use when: internal maintainer notes should not be part of public docs.
-- Good for: implementation/migration notes for contributors.
-- Avoid: user-facing behavior docs.
-- Note: handling may depend on the documentation pipeline.
-
-```ts
-/**
- * @privateRemarks
- * Keep wire format stable until mobile client v4 is fully rolled out.
- */
-```
-
-#### `@example`
-
-- Use when: real usage clarifies intent, edge cases, or expected output.
-- Good for: short, runnable or near-runnable snippets.
-- Avoid: large, noisy, outdated snippets.
-
-```ts
-/**
- * @example
- * ```ts
- * const token = await issueToken(userId)
- * ```
- */
-```
-
-#### `@throws`
-
-- Use when: function intentionally throws and callers should handle it.
-- Good for: throw condition and error type/category.
-- Avoid: listing every low-level incidental error.
-
-```ts
-/**
- * @throws Error if the checksum does not match.
- */
-```
-
-#### `@deprecated`
-
-- Use when: API should not be used going forward.
-- Good for: replacement API and migration note.
-- Avoid: deprecating without migration guidance.
-
-```ts
-/**
- * @deprecated Use `createSessionToken()` instead.
- */
-```
-
-#### `@see`
-
-- Use when: readers need related APIs/specs/docs.
-- Good for: cross references and alternatives.
-- Avoid: links that are unrelated to usage decisions.
-
-```ts
-/**
- * @see {@link validateToken}
- */
-```
-
-#### `@inheritDoc`
-
-- Use when: API intentionally inherits docs from another declaration.
-- Good for: overrides or wrappers with identical contract.
-- Avoid: using when behavior differs from source declaration.
-
-```ts
-/**
- * @inheritDoc BaseClient.fetch
- */
-```
-
-#### `@defaultValue`
-
-- Use when: documenting default value semantics for properties/options.
-- Good for: public config surfaces.
-- Avoid: stale defaults that diverge from implementation.
-
-```ts
-/**
- * @defaultValue 5000
- */
-```
-
-#### `@packageDocumentation`
-
-- Use when: authoring package-level docs for an entrypoint/module.
-- Good for: top-level module overview and usage.
-- Avoid: placing on regular member docs.
-
-```ts
-/**
- * @packageDocumentation
- * Utilities for parsing and validating auth tokens.
- */
-```
-
-### 3.2 Inline Tags
-
-#### `{@link ...}`
-
-- Use when: referencing symbols or URLs inside prose.
-- Good for: discoverability of related APIs.
-- Avoid: plain text references when symbol links are available.
-
-```ts
-/**
- * Compatible with {@link TokenVerifier.verify} and {@link https://example.com/spec | RFC spec}.
- */
-```
-
-#### `{@label ...}`
-
-- Use when: creating labels for structured references.
-- Good for: advanced doc cross-reference scenarios.
-- Avoid: normal linking use cases where `{@link}` is enough.
-
-```ts
-/**
- * {@label RetryPolicy}
- */
-```
-
-### 3.3 Modifier Tags
-
-Modifier tags are marker tags with no body text.
-
-#### Release and visibility policy tags
-
-##### `@public`
-- Use when: API is intended for public consumers.
-- Avoid: tagging internal-only symbols as public.
-
-##### `@internal`
-- Use when: API is for package maintainers only.
-- Avoid: exposing stable contracts with this tag unless intentional.
-
-##### `@alpha`
-- Use when: API is unstable and expected to change.
-- Avoid: long-lived production contracts.
-
-##### `@beta`
-- Use when: mostly ready, but may still evolve.
-- Avoid: marking fully stable APIs if your policy treats beta as prerelease.
-
-##### `@experimental`
-- Use when: feature is exploratory and may be removed.
-- Avoid: using as a synonym for "beta" unless your policy defines it that way.
-
-#### Inheritance/shape behavior tags
-
-##### `@override`
-- Use when: member overrides a base declaration.
-- Avoid: using on non-overriding members.
-
-##### `@virtual`
-- Use when: member is designed to be overridden by derived types.
-- Avoid: sealed/final behavior surfaces.
-
-##### `@sealed`
-- Use when: API shape is intentionally closed for extension.
-- Avoid: APIs intended for inheritance/extensibility.
-
-##### `@readonly`
-- Use when: value should be treated as immutable by consumers.
-- Avoid: mutable APIs where writes are expected.
-
-#### Specialized modifier tags
-
-##### `@eventProperty`
-- Use when: property represents an event-like member contract.
-- Avoid: regular data properties.
-
-##### `@decorator`
-- Use when: documenting declarations intended as decorators.
-- Avoid: non-decorator symbols.
+Load only the minimum rule files needed for the current edit/review task.
 
 ## 4) High-Quality TSDoc Patterns
 
@@ -386,6 +157,8 @@ Use these exact JSDoc "strings" for common cases:
 - Array object field: `@param {string} items[].id - Description`
 - Return type: `@returns {Promise<Result>} Description`
 - Throws type: `@throws {Error} Description`
+- Access style (pick one): `@access private` or `@private` (do not mix on one doc block)
+- `@implements` placement: use only on classes/constructors (not regular functions)
 
 ### TypeScript Object Param Hover Pattern (Recommended)
 
@@ -405,7 +178,14 @@ type SearchOptions = {
 export function search(options: SearchOptions) {}
 ```
 
-## 8) Sources Used For This Skill
+## 8) JSDoc Consistency Checklist
+
+Use this quick pass before finalizing JSDoc blocks in any project:
+
+- Access tags: use one access style per block; valid `@access` values are `package|private|protected|public`.
+- `@implements` placement: use it only on class constructors or constructor-style functions.
+
+## 9) Sources Used For This Skill
 
 - TSDoc: `/microsoft/tsdoc` (Context7)
 - JSDoc: `/jsdoc/jsdoc.github.io` (Context7)

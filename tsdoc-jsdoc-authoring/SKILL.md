@@ -19,6 +19,14 @@ Use this skill when the user asks to:
 - document params, return values, thrown errors, or examples
 - standardize documentation style across files
 
+## Routing (Read This First)
+
+Choose one focused index before loading rule files:
+
+- TypeScript APIs and typed exports: `indexes/tsdoc-index.md`
+- JavaScript authoring and shape docs: `indexes/jsdoc-authoring-index.md`
+- Strict consistency/lint-safe output standards: `indexes/jsdoc-consistency-index.md`
+
 ## Rule 1: Choose the Correct Standard
 
 - Use **TSDoc** for TypeScript code and typed public APIs.
@@ -77,6 +85,14 @@ JSDoc formatting reminders:
 - Optional with default: `@param {string} [name=John Doe]`
 - Nested object props: `@param {Object} options` and `@param {string} options.mode`
 
+## JSDoc Consistency Standard
+
+Apply these rules by default in all JavaScript documentation, regardless of lint setup.
+
+- Keep `@access` usage consistent per block (`@access <level>` or one shorthand access tag).
+- Use `@implements` only on classes/constructors.
+- Prefer rule-specific guidance from the `rules/jsdoc/**` files when there is a conflict.
+
 ## Output Expectations
 
 When updating comments:
@@ -90,14 +106,11 @@ For templates and tag cheat sheets, see [reference.md](reference.md).
 
 ## Rule Files
 
-Read focused rule files in `rules/` for concrete "incorrect vs correct" patterns:
+Use focused indexes to avoid loading unrelated rules:
 
-- Core contract: `tsdoc-summary`, `tsdoc-remarks`, `tsdoc-param`, `tsdoc-typeparam`, `tsdoc-returns`, `tsdoc-throws`, `tsdoc-example`, `tsdoc-deprecated`
-- Cross-reference/reuse: `tsdoc-link`, `tsdoc-see`, `tsdoc-inheritdoc`, `tsdoc-label`
-- Package/internal: `tsdoc-package-documentation`, `tsdoc-private-remarks`, `tsdoc-default-value`
-- Policy: `tsdoc-release-tags`, `tsdoc-modifier-tags`, `tsdoc-no-jsdoc-braces`
-- JSDoc core: `jsdoc-summary`, `jsdoc-param`, `jsdoc-optional-default`, `jsdoc-property-namepaths`, `jsdoc-returns`, `jsdoc-throws`, `jsdoc-example`
-- JSDoc advanced: `jsdoc-typedef-property`, `jsdoc-async`, `jsdoc-yields`, `jsdoc-class-constructor`, `jsdoc-module`
+- TSDoc index: `indexes/tsdoc-index.md`
+- JSDoc authoring index: `indexes/jsdoc-authoring-index.md`
+- JSDoc consistency index: `indexes/jsdoc-consistency-index.md`
 
 ## Full Compiled Document
 

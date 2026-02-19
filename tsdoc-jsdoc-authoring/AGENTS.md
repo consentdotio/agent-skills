@@ -16,6 +16,16 @@ February 2026
 
 Comprehensive TSDoc and JSDoc authoring guide for automated documentation generation and review. Contains focused rules across core contract tags, linking/reuse tags, package/internal docs, policy tags, and JavaScript-focused docstring patterns. Each rule explains when to use the tag, when not to use it, and includes concrete incorrect/correct examples.
 
+## Read Order (Context-Safe)
+
+Before using this catalog, route through one focused index:
+
+- `indexes/tsdoc-index.md`
+- `indexes/jsdoc-authoring-index.md`
+- `indexes/jsdoc-consistency-index.md`
+
+This file is a reference catalog. Load only the relevant subsection after choosing an index.
+
 ---
 
 ## Rule Index
@@ -64,6 +74,9 @@ Comprehensive TSDoc and JSDoc authoring guide for automated documentation genera
 5.10 [Document Generator Output with `@yields`](#510-document-generator-output-with-yields)  
 5.11 [Document Constructors and Classes Clearly](#511-document-constructors-and-classes-clearly)  
 5.12 [Use `@module` for Module-Level Docs](#512-use-module-for-module-level-docs)  
+5.13 [Validate Access Tags with `check-access`](#513-validate-access-tags-with-check-access)  
+5.14 [Restrict `@implements` to Classes or Constructors](#514-restrict-implements-to-classes-or-constructors)  
+
 
 ---
 
@@ -149,6 +162,8 @@ See: `rules/tsdoc/policy/tsdoc-no-jsdoc-braces.md`
 
 ## 5. JSDoc Rules (JavaScript)
 
+These rules are part of the default documentation standard and should be followed even without an active linter.
+
 ### 5.1 Write JSDoc Summaries with Intent
 
 See: `rules/jsdoc/core/jsdoc-summary.md`
@@ -196,6 +211,14 @@ See: `rules/jsdoc/advanced/jsdoc-class-constructor.md`
 ### 5.12 Use `@module` for Module-Level Docs
 
 See: `rules/jsdoc/advanced/jsdoc-module.md`
+
+### 5.13 Validate Access Tags with `check-access`
+
+See: `rules/jsdoc/core/jsdoc-check-access.md`
+
+### 5.14 Restrict `@implements` to Classes or Constructors
+
+See: `rules/jsdoc/advanced/jsdoc-implements-on-classes.md`
 
 ---
 
