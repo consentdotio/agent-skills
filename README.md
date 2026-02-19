@@ -11,7 +11,7 @@ Comprehensive TSDoc and JSDoc authoring skill for TypeScript and JavaScript code
 ## Installation
 
 ```bash
-npx skills add https://github.com/consentdotio/agent-skills --skill tsdoc-jsdoc-authoring
+npx skills add consentdotio/agent-skills
 ```
 
 ## Usage
