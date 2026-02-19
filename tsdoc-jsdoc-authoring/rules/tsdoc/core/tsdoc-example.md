@@ -23,7 +23,7 @@ export async function retry<T>(fn: () => Promise<T>): Promise<T> {}
 
 **Correct (clear example):**
 
-```ts
+````ts
 /**
  * Retries an operation with backoff.
  * @example
@@ -32,4 +32,4 @@ export async function retry<T>(fn: () => Promise<T>): Promise<T> {}
  * ```
  */
 export async function retry<T>(fn: () => Promise<T>): Promise<T> {}
-```
+````

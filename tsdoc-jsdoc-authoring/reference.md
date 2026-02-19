@@ -17,7 +17,7 @@ Standard order for a high-quality TSDoc block:
 
 Template:
 
-```ts
+````ts
 /**
  * One-sentence summary in plain language.
  *
@@ -34,7 +34,7 @@ Template:
  * ```
  * @deprecated Use `newFn()` instead.
  */
-```
+````
 
 ## 2) TSDoc Tag Kinds (Syntax Types)
 
@@ -79,7 +79,10 @@ export async function getProfile(): Promise<UserProfile> {}
  * @param getKey - Derives a stable key from each item.
  * @returns A map from key to item.
  */
-export function toMap<T>(items: T[], getKey: (item: T) => string): Map<string, T> {}
+export function toMap<T>(
+  items: T[],
+  getKey: (item: T) => string
+): Map<string, T> {}
 ```
 
 ### Document thrown contract only

@@ -8,6 +8,7 @@ tags: jsdoc, access, lint, visibility
 ## Validate Access Tags with `check-access`
 
 When documenting visibility in JSDoc, use exactly one access style per doc block:
+
 - `@access package|private|protected|public`, or
 - one shorthand tag: `@package`, `@private`, `@protected`, or `@public`
 

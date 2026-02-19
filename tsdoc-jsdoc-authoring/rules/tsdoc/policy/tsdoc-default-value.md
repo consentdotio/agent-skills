@@ -18,7 +18,7 @@ Use `@defaultValue` to document meaningful default behavior.
 /**
  * Maximum retry attempts.
  */
-export const DEFAULT_RETRY_ATTEMPTS = 3
+export const DEFAULT_RETRY_ATTEMPTS = 3;
 ```
 
 **Correct (explicit default):**
@@ -28,5 +28,5 @@ export const DEFAULT_RETRY_ATTEMPTS = 3
  * Maximum retry attempts.
  * @defaultValue 3
  */
-export const DEFAULT_RETRY_ATTEMPTS = 3
+export const DEFAULT_RETRY_ATTEMPTS = 3;
 ```

@@ -14,6 +14,7 @@ Create high-quality documentation comments for functions, classes, interfaces, t
 ## When to Apply
 
 Use this skill when the user asks to:
+
 - add or improve code comments/docs
 - write TSDoc or JSDoc
 - document params, return values, thrown errors, or examples
@@ -56,6 +57,7 @@ Choose one focused index before loading rule files:
 ## TSDoc Rules
 
 Use these tags by default when relevant:
+
 - `@param` for each function argument
 - `@typeParam` for generic parameters
 - `@returns` for return semantics
@@ -65,6 +67,7 @@ Use these tags by default when relevant:
 - `@deprecated` for migration guidance
 
 TSDoc formatting reminders:
+
 - Use `@param name - Description` with a hyphen separator.
 - Prefer inline links with `{@link SymbolName}`.
 - Keep release tags (`@alpha`, `@beta`, `@public`, `@internal`) aligned with project policy.
@@ -73,6 +76,7 @@ TSDoc formatting reminders:
 ## JSDoc Rules
 
 Use these tags by default when relevant:
+
 - `@param {Type} name` (with optional/default forms when needed)
 - `@returns {Type}` (or `@return`)
 - `@throws {Type}` when known
@@ -81,6 +85,7 @@ Use these tags by default when relevant:
 - `@async` and `@yields` for async/generator behavior when needed
 
 JSDoc formatting reminders:
+
 - Optional params: `@param {string} [name]`
 - Optional with default: `@param {string} [name=John Doe]`
 - Nested object props: `@param {Object} options` and `@param {string} options.mode`
@@ -96,6 +101,7 @@ Apply these rules by default in all JavaScript documentation, regardless of lint
 ## Output Expectations
 
 When updating comments:
+
 - keep existing project conventions unless user requests a migration
 - preserve behavior accuracy over verbosity
 - avoid adding comments to private/internal symbols unless requested

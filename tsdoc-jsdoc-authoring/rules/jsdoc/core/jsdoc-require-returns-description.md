@@ -15,6 +15,7 @@ Ensure `@returns` tags include a description value.
 A `@returns` tag should explain what is returned, not just indicate that a return exists.
 
 The error is not reported when the return type is:
+
 - `void`
 - `undefined`
 - `Promise<void>`
