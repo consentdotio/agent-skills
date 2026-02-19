@@ -18,7 +18,7 @@ This prevents missing yield contracts and inconsistent generator documentation.
 
 ```js
 function* quux(foo) {
-  yield foo;
+	yield foo;
 }
 ```
 
@@ -36,10 +36,10 @@ function* quux(foo) {}
 
 ```js
 /**
- * @yields Foo
+ * @yields {Foo}
  */
 function* quux(foo) {
-  yield foo;
+	yield foo;
 }
 ```
 

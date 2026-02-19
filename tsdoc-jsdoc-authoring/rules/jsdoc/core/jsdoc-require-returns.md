@@ -10,7 +10,7 @@ tags: jsdoc, returns, completeness, lint
 Document return statements with `@returns` and avoid multiple `@returns` tags in a single doc block.
 
 **Use this when:** documenting functions or methods that return values.  
-**Avoid this when:** omitting `@returns` for returning functions or adding duplicate `@returns` tags.
+**Avoid this when:** the function truly has no return value or return information is inherited from external type declarations.
 
 This prevents missing return contracts and inconsistent return documentation.
 
@@ -19,7 +19,7 @@ This prevents missing return contracts and inconsistent return documentation.
 ```js
 /** Foo. */
 function quux() {
-  return foo;
+	return foo;
 }
 ```
 
@@ -31,7 +31,7 @@ function quux() {
  * @returns Foo?
  */
 function quux() {
-  return foo;
+	return foo;
 }
 ```
 
@@ -40,7 +40,7 @@ function quux() {
 ```js
 /** @returns Foo. */
 function quux() {
-  return foo;
+	return foo;
 }
 ```
 

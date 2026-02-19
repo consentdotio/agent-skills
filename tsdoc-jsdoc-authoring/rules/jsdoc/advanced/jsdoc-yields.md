@@ -18,7 +18,9 @@ Use `@yields {Type}` to describe generator output values.
 /**
  * Generates Fibonacci numbers.
  */
-function* fibonacci() {}
+function* fibonacci() {
+	yield 0;
+}
 ```
 
 **Correct (explicit yielded contract):**
@@ -28,5 +30,7 @@ function* fibonacci() {}
  * Generates Fibonacci numbers.
  * @yields {number} The next number in the sequence.
  */
-function* fibonacci() {}
+function* fibonacci() {
+	yield 0;
+}
 ```
