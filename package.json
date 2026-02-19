@@ -1,0 +1,7 @@
+{
+    "name": "tsdoc-jsdoc-authoring-skill",
+    "private": true,
+    "scripts": {
+      "validate": "bunx skills-ref validate ./tsdoc-jsdoc-authoring"
+    }
+  }
